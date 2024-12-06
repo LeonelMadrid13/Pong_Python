@@ -7,10 +7,18 @@ pg.mixer.init()
 WIDTH = 800
 HEIGHT = 600
 BALL_SPEED_X = 5
-PALET_SOUND = pg.mixer.Sound("./golpe_paleta.mp3")
+
+#PATHS
+LOGO_PATH = "./lib/pong.png"
+PALET_SOUND_PATH = "./lib/golpe_paleta.mp3"
+WALL_SOUND_PATH = "./lib/golpe_pared.mp3"
+POINT_SOUND_PATH = "./lib/punto.mp3"
+
+# Sounds
+PALET_SOUND = pg.mixer.Sound(PALET_SOUND_PATH)
 PALET_SOUND.set_volume(0.5)
-WALL_SOUND = pg.mixer.Sound("./golpe_pared.mp3")
-POINT_SOUND = pg.mixer.Sound("./punto.mp3")
+WALL_SOUND = pg.mixer.Sound(WALL_SOUND_PATH)
+POINT_SOUND = pg.mixer.Sound(POINT_SOUND_PATH)
 POINT_SOUND.set_volume(0.3)
 
 # Color Palette
@@ -152,7 +160,7 @@ def main():
     pg.init()
     screen = pg.display.set_mode((WIDTH, HEIGHT))
     pg.display.set_caption("Pong")
-    pg.display.set_icon(pg.image.load("./pong.png"))
+    pg.display.set_icon(pg.image.load(LOGO_PATH))
 
     global ball_speed_y
     global p1_points
